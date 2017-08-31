@@ -1,0 +1,16 @@
+#!/bin/env bash
+
+# Link files to $HOME
+for file in $(ls -A home); do
+  path=$(readlink -f home/$file)
+  printf "Linking $file:\n"
+
+  if [[ -L $HOME/$file ]]; then
+    printf "\tAlready exists. Overwriting...\n"
+  fi
+
+  if ln -sf $path $HOME
+    then printf "\t$(file $HOME/$file)\n"
+    else exit
+  fi
+done
