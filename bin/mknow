@@ -1,0 +1,9 @@
+#!/bin/env bash
+
+if [ -z $1 ]
+  then target=`pwd`
+  else target=$(readlink -f $1)
+fi
+
+printf "#!/bin/env bash\ncd $target" > $BIN/links/now
+chmod +x $BIN/links/now
