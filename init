@@ -1,7 +1,12 @@
 #!/bin/env bash
 
+TARGET=linux
+
 source f.bash
 
 link home ~
-link linux ~
-link config ~/.config
+link $TARGET ~
+
+if [ $TARGET == linux ]; then
+  link config ~/.config
+fi
