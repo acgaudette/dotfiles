@@ -19,11 +19,11 @@ function link {
     printf "Linking $file"
 
     if [[ -L $dest ]]; then
-      printf " (overwriting...)\n"
+      printf " (overwriting...)"
     fi
 
     if ln -sf $path $target
-      then printf " $(file $dest)\n"
+      then printf "\n $(file $dest)\n"
       else return 1
     fi
   done; echo
