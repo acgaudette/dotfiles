@@ -1,0 +1,120 @@
+# INIT
+
+exec_always --no-startup-id $UTILS/wall
+exec --no-startup-id conky
+
+# Rust focus highlight manager
+exec_always --no-startup-id \
+  $BIN/out/i3-highlight-focused 4 120
+
+exec --no-startup-id $UTILS/wbat
+exec --no-startup-id $UTILS/wnot
+
+# Start with spacer
+exec i3-msg workspace 1
+exec --no-startup-id i3-msg open
+
+# OPTIONS
+
+set $super Mod4
+set $alt Mod1
+
+workspace_layout default
+workspace_auto_back_and_forth no
+focus_follows_mouse no
+focus_on_window_activation urgent #smart
+mouse_warping none #output
+force_focus_wrapping no
+
+# COMMANDS
+
+bindsym $super+space exec $UTILS/menu
+bindsym $super+Shift+Tab open
+bindsym $super+Return exec term
+bindsym $super+grave exec $UTILS/quaketerm
+
+bindsym $super+Escape exit
+bindsym $super+Shift+r restart
+
+# CLIENT COMMANDS
+
+bindsym $super+w kill
+bindsym $super+Shift+m fullscreen toggle
+bindsym $super+f floating toggle
+
+bindsym $super+m move container to workspace 9
+bindsym $super+Shift+semicolon workspace 9
+
+bindsym $super+p split h
+bindsym $super+i split v
+
+bindsym $super+Control+h resize shrink width 8 px or 8 ppt
+bindsym $super+Control+j resize shrink height 8 px or 8 ppt
+bindsym $super+Control+k resize grow height 8 px or 8 ppt
+bindsym $super+Control+l resize grow width 8 px or 8 ppt
+
+bindsym $super+Shift+h move left
+bindsym $super+Shift+j move down
+bindsym $super+Shift+k move up
+bindsym $super+Shift+l move right
+
+bindsym $super+Shift+1 move container to workspace 1
+bindsym $super+Shift+2 move container to workspace 2
+bindsym $super+Shift+3 move container to workspace 3
+bindsym $super+Shift+4 move container to workspace 4
+
+# MOVEMENT
+
+bindsym $super+Tab focus mode_toggle
+
+bindsym $super+u layout stacking
+bindsym $super+o layout toggle split
+
+bindsym $alt+h focus left
+bindsym $alt+j focus down
+bindsym $alt+k focus up
+bindsym $alt+l focus right
+
+bindsym $super+1 workspace 1
+bindsym $super+2 workspace 2
+bindsym $super+3 workspace 3
+bindsym $super+4 workspace 4
+
+# THEME
+
+new_window none
+new_float none
+hide_edge_borders smart #both #none
+
+font pango:Noto Mono 14
+
+client.focused          #5a2f5f #5a2f5f #ffffff #ab29ab #ab29ab
+client.focused_inactive #333333 #5f676a #ffffff #484e54 #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e #222222
+client.urgent           #2f343a #940000 #ffffff #900000 #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000 #0c0c0c
+client.background       #ffffff
+
+for_window [title="MATH"] floating enable
+for_window [title="DICTIONARY"] floating enable
+
+for_window [instance="quaketerm"] \
+  floating enable border none move absolute position 0 0
+
+for_window [tiling] border pixel 0 \
+  title_format "<span>%title</span>"
+
+# STATUS BAR
+
+bar {
+  output eDP1
+  status_command i3status -c ~/.config/i3/status.conf
+
+  mode hide
+  modifier Mod4
+
+  tray_output none
+  workspace_buttons no
+
+  colors { background #121212 }
+}
