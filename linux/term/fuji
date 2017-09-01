@@ -1,5 +1,3 @@
-URxvt.font: xft:Noto Mono:size=16
-
 URxvt*background: #193a65
 URxvt*foreground: #d3c9bc
 

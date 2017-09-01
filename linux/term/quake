@@ -1,5 +1,3 @@
-URxvt.font: xft:Noto Mono:size=16
-
 URxvt*cursorColor: #574a4a
 
 URxvt*background: #211d1d
