@@ -12,4 +12,3 @@ redshift &
 
 exec i3
 #exec awesome
-#exec openbox-session
