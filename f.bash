@@ -1,6 +1,15 @@
 #!/bin/env bash
 
 function link {
+  local -r path=$1; local -r target=$2
+
+  if ln -sf $path $target
+    then printf "\n $(file $target)\n"
+    else return 1
+  fi
+}
+
+function link_dir {
   local -r dir=$1; local -r target=$2
 
   if [ ! -d $dir ]; then
@@ -22,9 +31,7 @@ function link {
       printf " (overwriting...)"
     fi
 
-    if ln -sf $path $target
-      then printf "\n $(file $dest)\n"
-      else return 1
-    fi
+    if ! link $path $dest; then return 1; fi
+
   done; echo
 }
