@@ -1,0 +1,15 @@
+#!/bin/env bash
+
+mkdir $TRASH -p
+
+if [ -z $1 ]; then
+  echo Nothing specified! >&2
+  exit 1
+fi
+
+for i in "$@"; do
+  if [ $(pwd $i) == $TRASH ]; then
+    continue
+  fi
+  mv --backup=t $i $TRASH
+done
