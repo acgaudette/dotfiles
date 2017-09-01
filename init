@@ -4,3 +4,4 @@ source f.bash
 
 link home ~
 link linux ~
+link config ~/.config
