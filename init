@@ -1,7 +1,7 @@
 #!/bin/env bash
 
 function link {
-  dir=$1
+  dir=$1; target=$2
 
   if [ ! -d $dir ]; then
     printf "Invalid target directory \"$dir\"\n"
@@ -15,19 +15,16 @@ function link {
 
   for file in $(ls -A $dir); do
     path=$(readlink -f $dir/$file)
-    target=$HOME/$file
+    dest=$target/$file
     printf "Linking $file:\n"
 
-    if [[ -L $target ]]; then
+    if [[ -L $dest ]]; then
       printf "\tAlready exists. Overwriting...\n"
     fi
 
-    if ln -sf $path $HOME
-      then printf "\t$(file $target)\n"
+    if ln -sf $path $target
+      then printf "\t$(file $dest)\n"
       else return 1
     fi
   done; echo
 }
-
-link home
-link linux
