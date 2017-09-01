@@ -1,5 +1,10 @@
 #!/bin/env bash
 
+if [ -z $TRASH ]; then
+  echo '$TRASH environment variable not set!' >&2
+  exit 1
+fi
+
 mkdir $TRASH -p
 
 if [ -z $1 ]; then
