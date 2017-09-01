@@ -1,10 +1,18 @@
 #!/bin/env bash
 
 function link {
-  local -r path=$1; local -r target=$2
+  local -r file=$1; local -r target=$2
+
+  local -r path=$(readlink -f $file)
+  local -r dest=$target/$file
+
+  printf "Linking $file"
+  if [[ -L $dest ]]; then
+    printf " (overwriting...)"
+  fi
 
   if ln -sf $path $target
-    then printf "\n $(file $target)\n"
+    then printf "\n $(file $dest)\n"
     else return 1
   fi
 }
@@ -23,15 +31,6 @@ function link_dir {
   fi
 
   for file in $(ls -A $dir); do
-    local path=$(readlink -f $dir/$file)
-    local dest=$target/$file
-    printf "Linking $file"
-
-    if [[ -L $dest ]]; then
-      printf " (overwriting...)"
-    fi
-
-    if ! link $path $dest; then return 1; fi
-
+    if ! link $dir/$file $target; then return 1; fi
   done; echo
 }
