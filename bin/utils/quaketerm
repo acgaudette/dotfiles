@@ -1,0 +1,18 @@
+#!/bin/env bash
+
+local id=$(xdotool search --classname quaketerm)
+
+if [ -z "$id" ]; then
+  swtchterm quake
+  urxvtc -title quaketerm -name quaketerm -geometry 197x12
+  id=$(xdotool search --classname quaketerm)
+  xdotool windowfocus $id
+  swtchterm
+
+elif [ -z "$(xdotool search --onlyvisible --classname quaketerm 2>/dev/null)" ]
+  then
+    xdotool windowmap $id
+    xdotool windowfocus $id
+  else
+    xdotool windowunmap $id
+fi
