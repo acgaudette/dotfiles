@@ -1,1 +1,3 @@
-Finally added these to version control!
+Finally got around to adding these to version control.
+
+Usage: ./init
