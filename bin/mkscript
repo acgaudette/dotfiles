@@ -1,0 +1,25 @@
+#!/bin/env bash
+
+if [ -z $1 ]; then
+  echo No script name specified! >&2
+  exit 1
+fi
+
+if [ -z $2 ]
+  then script=$BIN/$1
+  else
+    if [ -d $2 ]
+      then script=$2/$1
+      else
+        echo Invalid target directory! >&2
+        exit 1
+    fi
+fi
+
+if [ -f $script ]; then
+  echo Script already exists! >&2
+  exit 1
+fi
+
+echo -e '#!/bin/env bash\n\n' > $script
+$EDITOR $script; chmod +x $script
