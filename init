@@ -1,12 +1,15 @@
 #!/bin/env bash
 
-TARGET=linux
-
 source f.bash
+
+if [ "$OSTYPE" == "linux-gnu" ]; then
+  target=linux
+  link config ~/.config
+
+elif [ "$OSTYPE" == "darwin" ]; then
+  target=macos
+
+fi
 
 link home ~
 link $TARGET ~
-
-if [ $TARGET == linux ]; then
-  link config ~/.config
-fi
