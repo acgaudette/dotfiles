@@ -1,0 +1,38 @@
+"xbacklight -inc 6"
+  XF86MonBrightnessUp
+
+"xbacklight -dec 6"
+  XF86MonBrightnessDown
+
+"xbacklight -inc 1"
+  Shift + alt + XF86MonBrightnessUp
+
+"xbacklight -dec 1"
+  Shift + alt + XF86MonBrightnessDown
+
+"xbacklight -set 1"
+  XF86LaunchA
+
+"xbacklight -set 100"
+  XF86LaunchB
+
+#""
+  #XF86KbdBrightnessUp
+
+#""
+  #XF86KbdBrightnessDown
+
+"amixer set Master 5%+; amixer set Master unmute; /home/acg/bin/utility/nvolume"
+  XF86AudioRaiseVolume
+
+"amixer set Master 5%-; amixer set Master unmute; /home/acg/bin/utility/nvolume"
+  XF86AudioLowerVolume
+
+"amixer set Master 1%+; amixer set Master unmute; /home/acg/bin/utility/nvolume"
+ Shift + alt +  XF86AudioRaiseVolume
+
+"amixer set Master 1%-; amixer set Master unmute; /home/acg/bin/utility/nvolume"
+  Shift + alt + XF86AudioLowerVolume
+
+"amixer set Master toggle; /home/acg/bin/utility/nmute"
+  XF86AudioMute
