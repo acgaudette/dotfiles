@@ -12,4 +12,4 @@ elif [ "$OSTYPE" == "darwin" ]; then
 fi
 
 link home ~
-link $TARGET ~
+link $target ~
