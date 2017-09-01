@@ -1,0 +1,22 @@
+#!/bin/env bash
+
+cd $DOTFILES
+
+for path in $(ls --group-directories-first .); do
+  if [ -d $path ]
+    then
+
+      # Special case
+      if [ $path == bin/ ]; then
+        printf "$path\n\t...\n"
+        continue
+      fi
+
+      if [ -z "$(ls -A $path)" ]
+        then echo $path
+        else printf "$path\n\t"; ls -A $path
+      fi
+
+    else echo $path
+  fi
+done
