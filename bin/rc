@@ -1,0 +1,4 @@
+#!/bin/env bash
+# Usage: . rc
+
+$EDITOR ~/.bashrc; source ~/.bashrc
