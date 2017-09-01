@@ -1,16 +1,33 @@
 #!/bin/env bash
 
-# Link files to $HOME
-for file in $(ls -A home); do
-  path=$(readlink -f home/$file)
-  printf "Linking $file:\n"
+function link {
+  dir=$1
 
-  if [[ -L $HOME/$file ]]; then
-    printf "\tAlready exists. Overwriting...\n"
+  if [ ! -d $dir ]; then
+    printf "Invalid target directory \"$dir\"\n"
+    return 1
   fi
 
-  if ln -sf $path $HOME
-    then printf "\t$(file $HOME/$file)\n"
-    else exit
+  if [ -z "$(ls -A $dir)" ]; then
+    printf "Target directory \"$dir\" is empty!\n"
+    return 1
   fi
-done
+
+  for file in $(ls -A $dir); do
+    path=$(readlink -f $dir/$file)
+    target=$HOME/$file
+    printf "Linking $file:\n"
+
+    if [[ -L $target ]]; then
+      printf "\tAlready exists. Overwriting...\n"
+    fi
+
+    if ln -sf $path $HOME
+      then printf "\t$(file $target)\n"
+      else return 1
+    fi
+  done; echo
+}
+
+link home
+link linux
