@@ -1,0 +1,5 @@
+#!/bin/env bash
+
+MENU=~/.config/i3/menu
+
+eval $(cat $MENU | dmenu -i -m 0 -sb darkred)
