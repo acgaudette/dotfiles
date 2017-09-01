@@ -13,3 +13,4 @@ fi
 
 link home ~
 link $target ~
+link bin ~
