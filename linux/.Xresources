@@ -1,0 +1,46 @@
+URxvt*scrollBar: false
+URxvt*iconFile: ~/.icons/terminal.png
+URxvt.font: xft:Noto Mono:size=16
+
+URxvt*background: #0d1926
+URxvt*foreground: #d9e6f2
+
+!black
+URxvt*color0: #000000
+!bright_black
+URxvt*color8: #262626
+
+!red
+URxvt*color1: #bb5f5c
+!bright_red
+URxvt*color9: #e1b9b7
+
+!green
+URxvt*color2: #5cbb5f
+!bright_green
+URxvt*color10: #b7e1b9
+
+!yellow
+URxvt*color3: #b8bb5c
+!bright_yellow
+URxvt*color11: #e0e1b7
+
+!blue
+URxvt*color4: #5f5cbb
+!bright_blue
+URxvt*color12: #b9b7e1
+
+!magenta
+URxvt*color5: #bb5cb8
+!bright_magenta
+URxvt*color13: #e1b7e0
+
+!cyan
+URxvt*color6: #5cb8bb
+!bright_cyan
+URxvt*color14: #b7e0e1
+
+!white
+URxvt*color7: #d9d9d9
+!bright_white
+URxvt*color15: #ffffff
