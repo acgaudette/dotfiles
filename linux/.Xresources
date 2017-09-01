@@ -1,46 +1,46 @@
-# Changes to this file will not be retained--see swtchterm
+! Changes to this file will not be retained--see swtchterm
 URxvt*scrollBar: false
 URxvt.font: xft:Noto Mono:size=16
 
 URxvt*background: #0d1926
 URxvt*foreground: #d9e6f2
 
-!black
+! black
 URxvt*color0: #000000
-!bright_black
+! bright_black
 URxvt*color8: #262626
 
-!red
+! red
 URxvt*color1: #bb5f5c
-!bright_red
+! bright_red
 URxvt*color9: #e1b9b7
 
-!green
+! green
 URxvt*color2: #5cbb5f
-!bright_green
+! bright_green
 URxvt*color10: #b7e1b9
 
-!yellow
+! yellow
 URxvt*color3: #b8bb5c
-!bright_yellow
+! bright_yellow
 URxvt*color11: #e0e1b7
 
-!blue
+! blue
 URxvt*color4: #5f5cbb
-!bright_blue
+! bright_blue
 URxvt*color12: #b9b7e1
 
-!magenta
+! magenta
 URxvt*color5: #bb5cb8
-!bright_magenta
+! bright_magenta
 URxvt*color13: #e1b7e0
 
-!cyan
+! cyan
 URxvt*color6: #5cb8bb
-!bright_cyan
+! bright_cyan
 URxvt*color14: #b7e0e1
 
-!white
+! white
 URxvt*color7: #d9d9d9
-!bright_white
+! bright_white
 URxvt*color15: #ffffff
