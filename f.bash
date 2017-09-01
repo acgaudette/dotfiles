@@ -1,29 +1,29 @@
 #!/bin/env bash
 
 function link {
-  dir=$1; target=$2
+  local -r dir=$1; local -r target=$2
 
   if [ ! -d $dir ]; then
-    printf "Invalid target directory \"$dir\"\n"
+    printf "Invalid target directory \"$dir\"\n" >&2
     return 1
   fi
 
   if [ -z "$(ls -A $dir)" ]; then
-    printf "Target directory \"$dir\" is empty!\n"
+    printf "Target directory \"$dir\" is empty!\n" >&2
     return 1
   fi
 
   for file in $(ls -A $dir); do
-    path=$(readlink -f $dir/$file)
-    dest=$target/$file
-    printf "Linking $file:\n"
+    local path=$(readlink -f $dir/$file)
+    local dest=$target/$file
+    printf "Linking $file"
 
     if [[ -L $dest ]]; then
-      printf "\tAlready exists. Overwriting...\n"
+      printf " (overwriting...)\n"
     fi
 
     if ln -sf $path $target
-      then printf "\t$(file $dest)\n"
+      then printf " $(file $dest)\n"
       else return 1
     fi
   done; echo
