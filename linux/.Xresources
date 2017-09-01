@@ -1,5 +1,5 @@
+# Changes to this file will not be retained--see swtchterm
 URxvt*scrollBar: false
-URxvt*iconFile: ~/.icons/terminal.png
 URxvt.font: xft:Noto Mono:size=16
 
 URxvt*background: #0d1926
