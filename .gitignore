@@ -7,4 +7,5 @@
 **/qutebrowser/qsettings
 
 /bin/misc
+/bin/out
 /bin/deprecated
