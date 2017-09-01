@@ -4,7 +4,7 @@ URxvt.letterSpace: -8
 URxvt*background: #000000
 URxvt*foreground: #ffffff
 
-!blue
+! blue
 URxvt*color4: #5cb1ff
-!bright_blue
+! bright_blue
 URxvt*color12: #b9b7e1
