@@ -1,0 +1,6 @@
+#!/bin/env bash
+
+source f.bash
+
+link home ~
+link linux ~
