@@ -1,0 +1,44 @@
+URxvt.font: xft:Noto Mono:size=16
+
+URxvt*background: #193a65
+URxvt*foreground: #d3c9bc
+
+! black
+URxvt*color0: #002045
+! bright_black
+URxvt*color8: #193a65
+
+! red
+URxvt*color1: #ceafa9
+! bright_red
+URxvt*color9: #00072c
+
+! green
+URxvt*color2: #af99a8
+! bright_green
+URxvt*color10: #797186
+
+! yellow
+URxvt*color3: #888ea8
+! bright_yellow
+URxvt*color11: #9c8688
+
+! blue
+URxvt*color4: #6a7ea3
+! bright_blue
+URxvt*color12: #c18795
+
+! magenta
+URxvt*color5: #436392
+! bright_magenta
+URxvt*color13: #e1a197
+
+! cyan
+URxvt*color6: #305381
+! bright_cyan
+URxvt*color14: #d3c9bc
+
+! white
+URxvt*color7: #d3c9bc
+! bright_white
+URxvt*color15: #cfb0a8
