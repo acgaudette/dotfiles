@@ -1,5 +1,10 @@
 #!/bin/env bash
 
+if [ -z $DOTFILES ]; then
+  echo '$DOTFILES environment variable not set!' >&2
+  exit 1
+fi
+
 cd $DOTFILES
 
 for path in $(ls --group-directories-first .); do
