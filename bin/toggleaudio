@@ -1,0 +1,12 @@
+#!/bin/env bash
+# Switch between speakers and HDMI audio
+
+RC=~/.asoundrc
+
+if [ -z "$(grep 7 $RC)" ]
+  then card=0; device=7
+  else card=1; device=0
+fi
+
+sed -Ei "s/card [0-1]/card $card/g" $RC
+sed -Ei "s/device [0-7]/device $device/g" $RC
