@@ -1,3 +1,3 @@
 #!/bin/env bash
 
-amixer | grep 'Left: Playback' | grep -Eo '[0-9]?[0-9]?[0-9]%'
+amixer | grep -m 1 -Eo '[0-9]?[0-9]?[0-9]%'
