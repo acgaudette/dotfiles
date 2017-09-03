@@ -1,0 +1,42 @@
+#!/bin/env bash
+# Scale the output resolution of the display
+
+OPTIONS="exact (default), fast, zoom, ultrazoom"
+DISP=eDP1
+
+function help {
+  echo Usage: scale option
+  echo Options = $OPTIONS
+  exit
+}
+
+if [ "$1" == '--help' ] || [ "$1" == '-h' ]; then help; fi
+
+function display {
+  if xrandr --output $DISP --mode $1x$2 --scale $3x$3; then
+    echo Main display: $1x$2x$3
+    # Restart WM
+    i3-msg restart
+  fi
+}
+
+case $1 in
+  'exact')
+    display 2560 1600 1
+    ;;
+  'fast')
+    display 1280 800 2
+    ;;
+  'zoom')
+    display 1920 1200 1
+    ;;
+  'ultrazoom')
+    display 1280 800 1
+    ;;
+  '') # Default
+    scale exact
+    ;;
+  *)
+    echo Invalid option specified!
+    help
+esac
