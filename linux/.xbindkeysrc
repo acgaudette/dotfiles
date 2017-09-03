@@ -16,17 +16,17 @@
 "xbacklight -set 100"
   XF86LaunchB
 
-"amixer set Master 5%+; amixer set Master unmute; /home/acg/bin/utility/nvolume"
+"amixer set Master 5%+; amixer set Master unmute; $UTILS/nvolume"
   XF86AudioRaiseVolume
 
-"amixer set Master 5%-; amixer set Master unmute; /home/acg/bin/utility/nvolume"
+"amixer set Master 5%-; amixer set Master unmute; $UTILS/nvolume"
   XF86AudioLowerVolume
 
-"amixer set Master 1%+; amixer set Master unmute; /home/acg/bin/utility/nvolume"
+"amixer set Master 1%+; amixer set Master unmute; $UTILS/nvolume"
  Shift + alt +  XF86AudioRaiseVolume
 
-"amixer set Master 1%-; amixer set Master unmute; /home/acg/bin/utility/nvolume"
+"amixer set Master 1%-; amixer set Master unmute; $UTILS/nvolume"
   Shift + alt + XF86AudioLowerVolume
 
-"amixer set Master toggle; /home/acg/bin/utility/nmute"
+"amixer set Master toggle; $UTILS/nmute"
   XF86AudioMute
