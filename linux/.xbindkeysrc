@@ -16,12 +16,6 @@
 "xbacklight -set 100"
   XF86LaunchB
 
-#""
-  #XF86KbdBrightnessUp
-
-#""
-  #XF86KbdBrightnessDown
-
 "amixer set Master 5%+; amixer set Master unmute; /home/acg/bin/utility/nvolume"
   XF86AudioRaiseVolume
 
