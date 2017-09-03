@@ -1,0 +1,18 @@
+#!/bin/env bash
+
+for pid in $(pidof -x wbat); do
+  if [ $pid != $$ ]; then
+    echo Multiple instances, quitting... >&2
+    exit 1
+  fi
+done
+
+while true; do {
+  acpi -b | awk -F '[,:%]' '{print $2, $3}' | {
+    read -r status charge
+
+    if [ $status == Discharging ] && [ $charge -le 15 ]; then
+      notify-send -u critical 'BATTERY LOW' "$charge%" -t 30000
+    fi
+  }; sleep 60
+}; done
