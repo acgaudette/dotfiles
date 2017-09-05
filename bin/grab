@@ -2,12 +2,12 @@
 
 OUT=~/grabs
 
-if [ -z $1 ]
-  then name='%F-%H%M%S'
-  else name=$1
+if [ "$1" ]
+  then name=$1
+  else name='%F-%H%M%S'
 fi
 
 mkdir -p $OUT
-if scrot -s $name.png -e "[ `pwd` != $OUT ] && mv \$f $OUT"
+if scrot -s "\'$name\'.png" -e "[ `pwd` != $OUT ] && mv \$f $OUT"
   then echo Saved to $OUT
 fi
