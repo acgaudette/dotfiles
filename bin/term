@@ -1,0 +1,22 @@
+#!/bin/env bash
+
+if [ "$1" == --help ] || [ "$1" == -h ]; then
+  echo "Usage: term [title] [width] [height] [command]"
+  exit
+fi
+
+if [ -z $1 ]
+  then title=term
+  else title=$1
+fi
+
+if [ -z $3 ]
+  then x=80; y=24
+  else x=$2; y=$3
+fi
+
+if [ ! -z $4 ]; then
+  cmd="-e bash -c \"$4\""
+fi
+
+urxvt -title "$title" -g ${x}x${y} -bc $cmd &
