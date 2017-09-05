@@ -10,7 +10,7 @@ function help {
   exit
 }
 
-if [ "$1" == '--help' ] || [ "$1" == '-h' ]; then help; fi
+if [ "$1" == --help ] || [ "$1" == -h ]; then help; fi
 
 function display {
   if xrandr --output $DISP --mode $1x$2 --scale $3x$3; then
