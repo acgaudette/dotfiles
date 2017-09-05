@@ -6,13 +6,13 @@ dir=$(find $TRASH -type d | wc -l)
 echo 'Emptying trash...'
 du $TRASH -h -d0
 
-if [ $pre == 0 -a $dir == 1 ]; then
+if [ "$pre" == 0 ] && [ "$dir" == 1 ]; then
   echo Trash is already empty.
   exit
 fi
 
 read -p 'Confirm delete '$pre' file(s) (y/n): ' -n 1 -r
-echo; if [ ! "$REPLY" =~ ^[Yy]$ ]; then exit; fi
+echo; if [[ ! "$REPLY" =~ ^[Yy]$ ]]; then exit; fi
 
 rm $TRASH -rfd #-i
 mkdir -p $TRASH

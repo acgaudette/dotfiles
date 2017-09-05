@@ -1,6 +1,6 @@
 #!/bin/env bash
 
-if [ -z $1 ]; then
+if [ ! "$1" ]; then
   echo No link name specified! >&2
   exit 1
 fi
@@ -8,10 +8,10 @@ fi
 link=$BIN/links/$1
 dir=`pwd`
 
-if [ -f $link ]; then
+if [ -f "$link" ]; then
   echo Link already exists! >&2
   exit 1
 fi
 
-printf "#!/bin/env bash\n\ncd $dir; ls\n" > $link
-$EDITOR $link; chmod +x $link
+printf "#!/bin/env bash\n\ncd $dir; ls\n" > "$link"
+$EDITOR "$link"; chmod +x "$link"

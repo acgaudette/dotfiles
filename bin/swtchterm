@@ -2,12 +2,14 @@
 
 DEFAULT=custom
 
-profile=$1
-if [ -z $profile ]; then profile=$DEFAULT; fi
+if [ "$1" ]
+  then profile=$1
+  else profile=$DEFAULT
+fi
 
 TERM=~/term
 
-if [ ! -f $TERM/$profile ]; then
+if [ ! -f "$TERM/$profile" ]; then
   echo No such profile! >&2
   exit 1
 fi
@@ -16,7 +18,7 @@ TARGET=~/.Xresources
 > $TARGET
 
 cp $TERM/HEADER $TARGET
-cat $TERM/$profile >> $TARGET
+cat "$TERM/$profile" >> $TARGET
 
 xrdb $TARGET
 echo "Switched urxvt config to \"$profile\""
