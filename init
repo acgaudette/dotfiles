@@ -2,11 +2,11 @@
 
 source f.bash
 
-if [ "$OSTYPE" == "linux-gnu" ]; then
+if [ "$OSTYPE" == linux-gnu ]; then
   target=linux
   link_dir config ~/.config
 
-elif [ "$OSTYPE" == "darwin" ]; then
+elif [ "$OSTYPE" == darwin ]; then
   target=macos
 
 fi
