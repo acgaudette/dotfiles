@@ -8,6 +8,7 @@ if [ "$1" ]
 fi
 
 mkdir -p $OUT
-if scrot -s "\'$name\'.png" -e "[ `pwd` != $OUT ] && mv \$f $OUT"
-  then echo Saved to $OUT
+if scrot -s "$name.png"; then
+  [ `pwd` != $OUT ] && mv "$name.png" $OUT
+  echo Saved to $OUT
 fi
