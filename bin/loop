@@ -1,0 +1,8 @@
+#!/bin/env bash
+
+if [ ! "$1" ]; then
+  echo No target specified! >&2
+  exit 1
+fi
+
+ffplay -fs $1 -loop 0
