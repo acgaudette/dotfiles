@@ -1,0 +1,28 @@
+#!/bin/env bash
+
+if [ ! "$1" ]; then
+  echo No note name specified! >&2
+  exit 1
+fi
+
+suffix=$(echo "$1" | awk -F '.' '{print $NF}')
+
+if [ $suffix == "$1" ]
+ then file=$1.md
+ else file=$1
+fi
+
+if [ ! -f "$file" ]; then
+  printf "# $1" > "$file"
+fi
+
+$BROWSER localhost:6419
+
+grip --pass $GH_API_KEY --quiet $file &
+
+if [ $EDITOR == vim ]
+  then vim $file -c SP
+  else $EDITOR $file
+fi
+
+killall grip
