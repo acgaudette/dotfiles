@@ -1,7 +1,12 @@
 #!/bin/env bash
 
 if [ ! "$1" ]; then
-  echo No note name specified! >&2
+  echo Usage: md name
+  exit
+fi
+
+if [ ! "$GH_API_KEY" ]; then
+  echo 'You need to export your GitHub API key to $GH_API_KEY!' >&2
   exit 1
 fi
 
@@ -21,6 +26,7 @@ $BROWSER localhost:6419
 grip --pass $GH_API_KEY --quiet "$file" &
 
 if [ $EDITOR == vim ]
+  # Spelling (see my .vimrc)
   then vim "$file" -c SP
   else $EDITOR "$file"
 fi
