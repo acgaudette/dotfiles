@@ -7,7 +7,7 @@ fi
 
 suffix=$(echo "$1" | awk -F '.' '{print $NF}')
 
-if [ $suffix == "$1" ]
+if [ "$suffix" == "$1" ]
  then file=$1.md
  else file=$1
 fi
@@ -18,11 +18,11 @@ fi
 
 $BROWSER localhost:6419
 
-grip --pass $GH_API_KEY --quiet $file &
+grip --pass $GH_API_KEY --quiet "$file" &
 
 if [ $EDITOR == vim ]
-  then vim $file -c SP
-  else $EDITOR $file
+  then vim "$file" -c SP
+  else $EDITOR "$file"
 fi
 
 killall grip
