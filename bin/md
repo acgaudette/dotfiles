@@ -10,6 +10,13 @@ if [ ! "$GH_API_KEY" ]; then
   exit 1
 fi
 
+for pid in $(pidof -x md); do
+  if [ $pid != $$ ]; then
+    echo Multiple instances, quitting... >&2
+    exit 1
+  fi
+done
+
 suffix=$(echo "$1" | awk -F '.' '{print $NF}')
 
 if [ "$suffix" == "$1" ]
