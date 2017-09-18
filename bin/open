@@ -1,0 +1,43 @@
+#!/bin/env bash
+
+DIR=gthumb
+IMG=feh
+VID=ffplay
+PDF=evince
+
+for i in "$@"
+  do
+    if [ -d "$i" ]; then
+      $DIR "$i" &
+      continue
+    elif [ ! -f "$i" ]; then
+      echo open: Target does not exist!
+      continue
+    fi
+
+    type=`echo "$i" | awk -F '.' '{print $NF}'`
+
+    case $type in
+      png)
+        $IMG "$i" &
+        ;;
+      jpg)
+        $IMG "$i" &
+        ;;
+
+      pdf)
+        $PDF "$i" &
+        ;;
+
+      mp4)
+        $VID "$i" &
+        ;;
+
+      html)
+        $BROWSER "$i" &
+        ;;
+
+      *)
+        echo open: Unknown file type!
+    esac
+done
