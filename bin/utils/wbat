@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 
 for pid in $(pidof -x wbat); do
   if [ $pid != $$ ]; then

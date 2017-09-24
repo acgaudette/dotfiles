@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 
 status=`amixer | grep -m 1 -Eo "\[on\]|\[off\]" | awk -F '[][]' '{print $2}'`
 if [ $status == on ]; then msg=UNMUTE; else msg=MUTE; fi
