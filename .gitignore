@@ -1,5 +1,7 @@
 *.swp
 
+.Xresources
+
 **/i3/menu
 
 **/qutebrowser/bookmarks
