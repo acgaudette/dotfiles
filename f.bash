@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 
 function link {
   local -r file=$1; local -r target=$2
