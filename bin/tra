@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 
 if [ -z "$TRASH" ]; then
   echo '$TRASH environment variable not set!' >&2

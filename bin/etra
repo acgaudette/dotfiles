@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 
 pre=$(find $TRASH -type f | wc -l)
 dir=$(find $TRASH -type d | wc -l)
