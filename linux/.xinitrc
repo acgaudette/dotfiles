@@ -1,5 +1,6 @@
 xrdb ~/.Xresources
 xbindkeys
+swtchterm
 
 # Japanese
 export GTK_IM_MODULE=fcitx
