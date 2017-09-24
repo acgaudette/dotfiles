@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 
 if [ -z $DOTFILES ]; then
   echo '$DOTFILES environment variable not set!' >&2
