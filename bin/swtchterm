@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 
 DEFAULT=custom
 
@@ -17,7 +17,8 @@ fi
 TARGET=~/.Xresources
 > $TARGET
 
-cp $TERM/HEADER $TARGET
+printf "! Changes to this file will not be retained\n\n" > $TARGET
+cat $TERM/HEADER >> $TARGET
 cat "$TERM/$profile" >> $TARGET
 
 xrdb $TARGET
