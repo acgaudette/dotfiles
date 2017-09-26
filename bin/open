@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 
 DIR=gthumb
 IMG=feh
@@ -30,6 +30,10 @@ for i in "$@"
         ;;
 
       mp4)
+        $VID "$i" &
+        ;;
+
+      m4v)
         $VID "$i" &
         ;;
 
