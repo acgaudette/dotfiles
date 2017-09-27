@@ -1,14 +1,26 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 
 OUT=~/grabs
+EXT=png
 
 if [ "$1" ]
   then name=$1
   else name=$(date +"%F-%H%M%S")
 fi
 
-mkdir -p $OUT
-if scrot -s "$name.png"; then
-  [ `pwd` != $OUT ] && mv "$name.png" $OUT
-  echo Saved to $OUT
+if [ "$2" ]
+  then out=$2
+  else out=$OUT
+fi
+
+if [ -f "$out/$name.$EXT" ]; then
+  read -p "Confirm replace $out/$name.$EXT (y/n): " -n 1 -r
+  echo; if [[ ! "$REPLY" =~ ^[Yy]$ ]]; then exit; fi
+fi
+
+mkdir -p "$out"
+
+if scrot -s "$name.$EXT"; then
+  [ `pwd` != "$out" ] && mv "$name.png" "$out"
+  echo Saved to $out
 fi
