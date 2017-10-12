@@ -7,13 +7,11 @@ set softtabstop=2
 set shiftwidth=2
 
 set autoindent
-"set textwidth=80
 
 set list
 set listchars=tab:·\ ,eol:¬,trail:·
 
 syntax enable
-set number
 set ruler
 set scrolloff=4
 
@@ -47,3 +45,5 @@ nnoremap <Left> <nop>
 nnoremap <Right> <nop>
 nnoremap <Up> <nop>
 nnoremap <Down> <nop>
+
+highlight EndOfBuffer ctermfg=darkgrey
