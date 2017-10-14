@@ -22,6 +22,6 @@ mkdir -p "$out"
 
 if scrot -s "$name.$EXT"; then
   out=$(readlink -f "$out")
-  [ `pwd` != "$out" ] && mv "$name.png" "$out"
+  [ `pwd` != "$out" ] && mv "$name.$EXT" "$out"
   echo Saved to $out
 fi
