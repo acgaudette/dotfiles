@@ -3,6 +3,11 @@
 OUT=~/grabs
 EXT=png
 
+if [ "$1" == --help ] || [ "$1" == -h ]; then
+  echo "Usage: grab [title] [destination]"
+  exit
+fi
+
 if [ "$1" ]
   then name=$1
   else name=$(date +"%F-%H%M%S")
