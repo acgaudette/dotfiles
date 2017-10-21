@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 
 if [ "$1" == --help ] || [ "$1" == -h ]; then
   echo "Usage: term [title] [theme] [width] [height] [command]"
