@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+alias d='git diff'
+alias a='git add'
+alias r='git reset'
+
+alias s='git status .'
+alias c="git commit -m '"
