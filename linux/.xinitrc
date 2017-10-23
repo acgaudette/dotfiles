@@ -1,5 +1,6 @@
 xrdb ~/.Xresources
 xbindkeys
+xbacklight -set 1
 swtchterm
 
 # Japanese
