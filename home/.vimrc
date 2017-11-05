@@ -29,21 +29,19 @@ set noshowmatch
 set spelllang=en
 set spellcapcheck=
 
+filetype plugin on
+
+hi clear SpellBad
+hi SpellBad ctermbg=darkgrey
+hi clear SpellRare
+highlight EndOfBuffer ctermfg=darkgrey
+
 command W w
 
 command SP setlocal spell
 command SPX set nospell
 
-"set title
-
-hi clear SpellBad
-"hi SpellBad cterm=underline
-hi SpellBad ctermbg=darkgrey
-hi clear SpellRare
-
 nnoremap <Left> <nop>
 nnoremap <Right> <nop>
 nnoremap <Up> <nop>
 nnoremap <Down> <nop>
-
-highlight EndOfBuffer ctermfg=darkgrey
