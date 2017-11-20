@@ -4,3 +4,5 @@ export HISTCONTROL=ignoredups
 complete -d cd
 
 [ -f ~/.osconfig ] && source ~/.osconfig
+
+alias l='clear; ls'
