@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+MAIN=eDP1
+SECONDARY=HDM2
+
+xrandr --output $SECONDARY --left-of $MAIN --mode 1920x1080$1 --rate 60
