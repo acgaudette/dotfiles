@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+term DICTIONARY quake 100 20 def
