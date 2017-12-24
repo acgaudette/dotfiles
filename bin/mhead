@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+if [ ! "$1" ]; then
+  echo Usage: app url
+  exit
+fi
+
 MAIN=eDP1
 SECONDARY=HDM2
 
