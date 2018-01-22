@@ -6,3 +6,5 @@ complete -d cd
 [ -f ~/.osconfig ] && source ~/.osconfig
 
 alias l='clear; ls'
+alias mv='mv -i'
+alias cp='cp -i'
