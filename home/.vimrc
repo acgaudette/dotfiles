@@ -15,6 +15,21 @@ syntax enable
 set ruler
 set scrolloff=4
 
+set fillchars+=vert:\ "
+hi clear VertSplit
+hi VertSplit ctermfg=darkgrey
+
+hi clear StatusLineNC
+hi clear StatusLine
+hi StatusLineNC ctermfg=lightgrey cterm=NONE
+hi StatusLine ctermfg=white cterm=NONE
+
+"hi StatusLineNC ctermbg=darkgrey ctermfg=white cterm=NONE
+"hi StatusLine ctermbg=darkgrey ctermfg=white cterm=bold
+
+"hi StatusLineNC ctermbg=black ctermfg=white cterm=NONE
+"hi StatusLine ctermbg=black ctermfg=white cterm=bold
+
 set backspace=indent,start,eol
 
 set history=512
