@@ -52,6 +52,7 @@ hi clear SpellRare
 highlight EndOfBuffer ctermfg=darkgrey
 
 command W w
+command Q q
 
 command SP setlocal spell
 command SPX set nospell
