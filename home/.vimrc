@@ -15,6 +15,10 @@ syntax enable
 set ruler
 set scrolloff=4
 
+set formatoptions+=r
+set formatoptions+=c
+set formatoptions-=o
+
 set fillchars+=vert:\ "
 hi clear VertSplit
 hi VertSplit ctermfg=darkgrey
