@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+printf "%02d:%02d:%02d" \
+$((RANDOM%23)) $((RANDOM%59)) $((RANDOM%59))
