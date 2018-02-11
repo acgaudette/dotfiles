@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+term "Running: $1" quake 80 20 $1
