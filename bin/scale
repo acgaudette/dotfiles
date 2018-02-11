@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Scale the output resolution of the display
 
-OPTIONS="exact (default), fast, zoom, ultrazoom"
+OPTIONS="exact (default), fast, zoom, ultrazoom, hd"
 DISP=eDP1
 
 function help {
@@ -32,6 +32,9 @@ case $1 in
     ;;
   'ultrazoom')
     display 1280 800 1
+    ;;
+  'hd')
+    display 1920 1080 1
     ;;
   '') # Default
     scale exact
