@@ -1,8 +1,17 @@
 #!/usr/bin/env bash
 
 if [ ! "$1" ]; then
-  echo Usage: app url
+  echo Usage: app [-u] url
   exit
 fi
 
-chromium --app=https://$1 &
+if [ "$1" == "-u" ]
+  then
+    s=
+    url=$2
+  else
+    s=s
+    url=$1
+fi
+
+chromium --app=http$s://$url &
