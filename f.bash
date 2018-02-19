@@ -30,6 +30,8 @@ function link_dir {
     return 1
   fi
 
+  mkdir -p $target
+
   for file in $(ls -A "$dir"); do
     if ! link "$dir/$file" "$target"; then return 1; fi
   done; echo
