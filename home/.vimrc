@@ -38,7 +38,6 @@ set backspace=indent,start,eol
 
 set history=512
 set autoread
-"set hlsearch
 
 let g:loaded_matchparen = 1
 set noshowmatch
