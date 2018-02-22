@@ -47,6 +47,7 @@ set noshowmatch
 set spelllang=en
 set spellcapcheck=
 
+:autocmd BufReadPre,BufNewFile * let b:did_ftplugin = 1
 filetype plugin on
 
 hi clear SpellBad
