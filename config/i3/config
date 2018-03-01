@@ -110,7 +110,7 @@ bar {
   status_command i3status -c ~/.config/i3/status.conf
 
   mode hide
-  modifier Mod4
+  modifier Mod1
 
   tray_output none
   workspace_buttons no
