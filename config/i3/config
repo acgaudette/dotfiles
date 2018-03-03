@@ -85,7 +85,7 @@ new_window none
 new_float none
 hide_edge_borders smart #both #none
 
-font pango:Noto Mono 14
+font pango:Noto Mono 11
 
 client.focused          #5a2f5f #5a2f5f #ffffff #ab29ab #ab29ab
 client.focused_inactive #333333 #5f676a #ffffff #484e54 #5f676a
