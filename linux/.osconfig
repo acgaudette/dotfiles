@@ -2,8 +2,7 @@ alias ls='ls -AF --color=auto --ignore='*.meta''
 alias grep='grep --color=auto'
 alias diff='diff --color=auto'
 
-export BROWSER='qutebrowser --backend webengine'
-alias qute=$BROWSER
-
 alias st='title'
 alias lst='ls $TRASH'
+
+export BROWSER=chromium
