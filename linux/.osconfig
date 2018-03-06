@@ -8,3 +8,4 @@ alias lst='ls $TRASH'
 export PATH=$PATH:/home/acg/.local/bin
 
 export BROWSER=chromium
+export APPIMAGE_SILENT_INSTALL=true
