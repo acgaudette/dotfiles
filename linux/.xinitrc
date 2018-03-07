@@ -2,6 +2,7 @@ xrdb ~/.Xresources
 xbindkeys
 xbacklight -set 1
 swtchterm
+xset r rate 240
 
 # Japanese
 export GTK_IM_MODULE=fcitx
