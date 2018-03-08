@@ -8,7 +8,7 @@ xset r rate 240
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS="@im=fcitx"
-fcitx
+fcitx &
 
 unclutter -idle 8 &
 redshift &
