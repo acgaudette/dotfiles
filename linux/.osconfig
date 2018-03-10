@@ -4,6 +4,7 @@ alias diff='diff --color=auto'
 
 alias st='title'
 alias lst='ls $TRASH'
+alias g='mkdir -p img; grab $1 img'
 
 export PATH=$PATH:/home/acg/.local/bin
 
