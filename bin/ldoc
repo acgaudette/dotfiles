@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+name=$1
+
+mkdir -p out
+
+pdflatex -file-line-error -interaction nonstopmode \
+-output-directory out $name
