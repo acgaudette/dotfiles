@@ -3,6 +3,7 @@
 DIR=gthumb
 IMG=feh
 VID=ffplay
+MUS=ffplay
 PDF=evince
 
 for i in "$@"
@@ -35,6 +36,10 @@ for i in "$@"
 
       m4v)
         $VID "$i" &
+        ;;
+
+      ogg)
+        $MUS "$i" &
         ;;
 
       html)
