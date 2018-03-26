@@ -8,3 +8,5 @@ complete -d cd
 alias l='clear; ls'
 alias mv='mv -i'
 alias cp='cp -i'
+
+alias gerp='while true; do grep -r / *; done'
