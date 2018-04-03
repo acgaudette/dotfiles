@@ -1,2 +1,3 @@
 export DOTFILES=~/dotfiles
 export TRASH=~/.trash
+export GOPATH=~/dev/misc/go
