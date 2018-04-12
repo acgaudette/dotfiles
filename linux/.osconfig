@@ -6,7 +6,7 @@ alias st='title'
 alias lst='ls $TRASH'
 alias g='mkdir -p img; grab $1 img'
 
-export PATH=$PATH:/home/acg/.local/bin
+export PATH=$PATH:~/.local/bin
 
 export BROWSER=chromium
 export APPIMAGE_SILENT_INSTALL=true
