@@ -38,6 +38,10 @@ for i in "$@"
         $VID "$i" &
         ;;
 
+      mov)
+        $VID "$i" &
+        ;;
+
       ogg)
         $MUS "$i" &
         ;;
