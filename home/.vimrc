@@ -61,6 +61,7 @@ highlight EndOfBuffer ctermfg=darkgrey
 command W w
 command Q q
 command Wq wq
+command Spl spl
 
 command SP setlocal spell
 command SPX set nospell
