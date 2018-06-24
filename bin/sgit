@@ -1,5 +1,14 @@
 #!/usr/bin/env bash
 
+alias g='git log'
+alias gg='git log --graph --oneline --all'
+
+alias k='git checkout'
+alias b='git branch'
+alias m='git merge'
+
+alias rr='git rebase -i master'
+alias cc='git rebase --continue'
 
 alias d='clear; git diff'
 alias ds='d --staged'
