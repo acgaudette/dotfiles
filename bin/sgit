@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
-alias d='git diff'
+
+alias d='clear; git diff'
+alias ds='d --staged'
+
 alias a='git add'
 alias r='git reset'
 
