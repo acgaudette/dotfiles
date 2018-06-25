@@ -18,3 +18,4 @@ alias r='git reset'
 
 alias s='git status .'
 alias c="git commit -m '"
+alias aa='git commit --amend'
