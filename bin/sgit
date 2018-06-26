@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+cat ~/bin/sgit | grep alias | sed 's/alias//' | tail -n +2
+
 alias g='git log'
 alias gg='git log --graph --oneline --all'
 
