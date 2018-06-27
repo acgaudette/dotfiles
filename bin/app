@@ -7,11 +7,15 @@ fi
 
 if [ "$1" == "-u" ]
   then
-    s=
+    prefix=http
+    url=$2
+elif [ "$1" == "-f" ]
+  then
+    prefix=file
     url=$2
   else
-    s=s
+    prefix=https
     url=$1
 fi
 
-chromium --app=http$s://$url &
+chromium --app=$prefix://$url &
