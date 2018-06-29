@@ -22,7 +22,7 @@ function display {
 
 case $1 in
   'exact')
-    display 2560 1600 1
+    display 1920 1080 1
     ;;
   'fast')
     display 1280 800 2
