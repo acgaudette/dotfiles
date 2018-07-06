@@ -1,11 +1,7 @@
 #!/usr/bin/env bash
 
-if [ ! "$1" ]; then
-  echo Usage: app url
-  exit
-fi
-
 MAIN=eDP1
 SECONDARY=HDM2
 
+# $1 e.g. i
 xrandr --output $SECONDARY --left-of $MAIN --mode 1920x1080$1 --rate 60
