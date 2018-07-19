@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+mode=$1; img=$2
+feh --bg-$mode ~/Downloads/wallpapers/$img
