@@ -4,7 +4,7 @@ DIR=gthumb
 IMG=feh
 VID=ffplay
 MUS=ffplay
-PDF=evince
+PDF=evince #okular
 
 for i in "$@"
   do
