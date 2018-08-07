@@ -1,0 +1,5 @@
+set completion-prefix-display-length 3
+set show-all-if-ambiguous On
+set show-all-if-unmodified On
+set match-hidden-files On
+set editing-mode vi
