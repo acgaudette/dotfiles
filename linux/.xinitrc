@@ -1,6 +1,5 @@
 xrdb ~/.Xresources
 xbindkeys
-xbacklight -set 1
 swtchterm
 xset r rate 240
 
