@@ -10,6 +10,7 @@ alias l='clear; ls'
 alias mv='mv -i'
 alias cp='cp -i'
 
+alias run='tput reset; eval $@'
 alias gerp='while true; do grep -r / *; done'
 
 bind -r '\e[A'
