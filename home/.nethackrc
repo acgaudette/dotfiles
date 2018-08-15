@@ -1,0 +1,15 @@
+OPTIONS=fruit:passion fruit
+OPTIONS=hilite_pet
+OPTIONS=showrace
+OPTIONS=lit_corridor
+
+OPTIONS=msg_window:reverse
+OPTIONS=time
+
+OPTIONS=symset:DECgraphics
+OPTIONS=color
+OPTIONS=menucolors
+OPTIONS=use_darkgray
+
+OPTIONS=autopickup
+OPTIONS=pickup_types:$?!/)*"
