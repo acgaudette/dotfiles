@@ -1,0 +1,22 @@
+source 'gpg -d ~/.config/mutt/passwords.gpg |'
+
+set realname = 'Aaron C Gaudette'
+set from = 'acg@aaronsee.media'
+set editor = 'vim + -c "set lbr"'
+set header_cache = '~/.cache/mutt/headers'
+
+set imap_user = 'acg@aaronsee.media'
+
+set spoolfile = '+'
+set record = '+Sent'
+set postponed = '+Drafts'
+
+set sort='reverse-threads'
+set sort_aux = 'last-date-received'
+set strict_threads='yes'
+set edit_headers='yes'
+set abort_nosubject='no'
+set quit='ask-yes'
+set reply_self='no'
+
+set index_format='%Z %{%d.%m} %-15.15L (%c) %s'
