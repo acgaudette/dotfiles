@@ -5,5 +5,5 @@ if [ ! "$1" ]
   else target=$(readlink -f "$1")
 fi
 
-printf "#!/usr/bin/env bash\ncd $target" > $BIN/links/now
+printf "#!/usr/bin/env bash\ncd $target\n" > $BIN/links/now
 chmod +x $BIN/links/now
