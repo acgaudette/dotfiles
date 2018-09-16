@@ -36,11 +36,9 @@ for i in "$@"
       mp4)
         $VID "$i" &
         ;;
-
       m4v)
         $VID "$i" &
         ;;
-
       mov)
         $VID "$i" &
         ;;
