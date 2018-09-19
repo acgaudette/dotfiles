@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+while inotifywait -q -r \
+--timefmt "%H%M:%S" \
+--format "%T Reloading %w" \
+"$@"; do
+    calling=$(xdotool getactivewindow)
+
+    xdotool search --desktop 0 --name "$BROWSER" \
+    windowactivate --sync \
+    key --clearmodifiers ctrl+r
+
+    xdotool windowactivate "$calling"
+done
