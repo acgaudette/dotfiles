@@ -30,3 +30,6 @@
 
 "amixer set Master toggle; $UTILS/nmute"
   XF86AudioMute
+
+"shutdown 0"
+  XF86PowerOff
