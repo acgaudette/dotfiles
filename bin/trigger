@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+in=$1; cmd=$2
+while inotifywait -q -r \
+--timefmt "%H%M:%S" \
+--format "%T Triggering %w" \
+"$in"; do eval $cmd; done
