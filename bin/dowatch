@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+cmd=$1; shift
+
+while inotifywait -q -r \
+--timefmt "%H%M:%S" \
+--format "%T Executing $cmd for %w" \
+"$@"; do
+    $cmd; echo
+done
