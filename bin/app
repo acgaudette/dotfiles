@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if [ ! "$1" ]; then
-  echo Usage: app [-u] url
+  echo Usage: app [-ufl] url
   exit
 fi
 
@@ -13,6 +13,10 @@ elif [ "$1" == "-f" ]
   then
     prefix=file
     url=$2
+elif [ "$1" == "-l" ]
+  then
+    prefix=file
+    url=$(pwd)/$2
   else
     prefix=https
     url=$1
