@@ -9,8 +9,5 @@
 **/qutebrowser/quickmarks
 **/qutebrowser/qsettings
 
-/bin/misc
-/bin/out
-/bin/deprecated
-
+/bin/apps/
 /bin/links/*

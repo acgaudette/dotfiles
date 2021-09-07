@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+if [[ `systemctl is-active bluetooth.service` != 'active' ]]
+  then systemctl start bluetooth.service
+fi
+
+echo power on, scan on, paired-devices, pair / connect, info; echo
+
+bluetoothctl
+# pacmd list-sinks | grep 'name:'
+
+CARD=`pacmd list-cards | grep bluez_card | awk -F '[<>]' '{print $2}'`
+printf 'Forcing card to a2dp... '; printf "\"$CARD\" "
+pacmd set-card-profile $CARD a2dp_sink
+echo
+
+SINK=`pacmd list-sinks | grep bluez_sink | awk -F '[<>]' '{print $2}'`
+printf 'Setting sink automatically... to '; printf "\"$SINK\" "
+pactl set-default-sink $SINK
+echo
+
+sndinfo
+alert # Test sound

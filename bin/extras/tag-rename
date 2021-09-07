@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+source sgit
+git tag $2 $1 -m < $(ts $1)
+git tag -d $1

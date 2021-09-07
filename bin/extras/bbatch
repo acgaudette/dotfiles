@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+~/Unity/Hub/Editor/*/Editor/Unity \
+	-batchmode -nographics -quit \
+	-projectPath $1 \
+	-buildLinux64Player $2

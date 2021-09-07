@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+OUT=~/screenshots
+EXT=png
+name=$(date +"%F-%H%M%S")
+if scrot "$name.$EXT"; then mv "$name.$EXT" $OUT; fi

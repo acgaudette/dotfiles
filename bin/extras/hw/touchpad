@@ -1,0 +1,6 @@
+#!/bin/sh
+
+TOUCHPAD='3058 Touchpad'
+XID=$(xinput list | grep "$TOUCHPAD" | awk -F ' ' '{ print $6 }' | cut -c 4-)
+echo $XID
+xinput enable $XID

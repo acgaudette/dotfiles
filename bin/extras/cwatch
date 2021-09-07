@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+cmd=$@
+
+cargo watch -c -x "$cmd --color=always 2>&1 | head -n 32"

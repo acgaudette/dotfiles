@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-NATIVE=1920x1080
-DISP=eDP1
-
-xrandr --output $DISP --mode 640x360 --panning $NATIVE
