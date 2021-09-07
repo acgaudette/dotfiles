@@ -1,0 +1,27 @@
+#!/bin/sh
+
+alias s='git status .'
+alias a='git add'
+alias r='git reset'
+alias d='git diff --histogram'
+alias b='git branch'
+alias k='git checkout'
+alias g='clear && git log'
+alias w='git show'
+
+alias aa='git commit --amend'
+alias ap='git -c diff.algorithm=histogram add -p'
+alias ds='d --staged'
+alias bb='b | grep \* | cut -c 3-'
+alias rr='git rebase -i'
+alias cc='git rebase --continue'
+alias ab='git rebase --abort'
+alias px='git cherry-pick -x'
+alias kb='k -b'
+alias gp='g -p'
+alias gg='g --graph --oneline --all'
+alias ts="git tag -l --format='%(contents)' $1"
+
+alias gpp='clear && gp -1'
+
+# also see: ./c
