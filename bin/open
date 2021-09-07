@@ -26,10 +26,13 @@ for i in "$@"
         $IMG "$i" &
         ;;
       gif)
-        $IMG "$i" &
+        $DIR "$i" &
         ;;
 
       pdf)
+        $PDF "$i" &
+        ;;
+      djvu)
         $PDF "$i" &
         ;;
 
