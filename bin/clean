@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
 
 sudo pacman -Scc
+tra ~/.cache/chromium
+tra ~/.cache/winetricks
+
 etra

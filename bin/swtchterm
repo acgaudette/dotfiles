@@ -11,6 +11,7 @@ TERM=~/term
 
 if [ ! -f "$TERM/$profile" ]; then
   echo No such profile! >&2
+  ls $TERM/
   exit 1
 fi
 

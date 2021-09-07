@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 
 mode=$1; img=$2
+echo center fill max scale tile
 feh --bg-$mode ~/Downloads/wallpapers/$img
