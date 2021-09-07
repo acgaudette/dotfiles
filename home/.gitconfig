@@ -1,5 +1,16 @@
 [user]
 	name = Aaron C Gaudette
-	email = gaudetteaaron@gmail.com
+	email = acg@aaronsee.media
 [core]
 	editor = vim
+[diff]
+	algorithm = patience
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[pull]
+	ff = only
+[init]
+	defaultBranch = master
