@@ -1,0 +1,3 @@
+#!/bin/sh
+
+vim $(date +%y.%m.%d)
