@@ -1,25 +1,21 @@
-scriptencoding=utf-8
-set encoding=utf-8
+set syntax=off
+set viminfofile=NONE
 
-set expandtab
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
+set tabstop=8
+set softtabstop=8
+set shiftwidth=8
 
-set nohlsearch
 set incsearch
-
 set autoindent
 
 set list
-set listchars=tab:·\ ,eol:¬,trail:·
+set listchars=tab:.\ ,trail:~
 
-syntax enable
 set ruler
-set scrolloff=4
+set wrap!
 
-set formatoptions+=r
-set formatoptions+=c
+set formatoptions-=r
+set formatoptions-=c
 set formatoptions-=o
 
 set fillchars+=vert:\ "
@@ -30,31 +26,20 @@ hi clear StatusLineNC
 hi clear StatusLine
 hi StatusLineNC ctermfg=lightgrey cterm=NONE
 hi StatusLine ctermfg=white cterm=NONE
+hi Visual ctermfg=white ctermbg=darkred
 
-"hi StatusLineNC ctermbg=darkgrey ctermfg=white cterm=NONE
-"hi StatusLine ctermbg=darkgrey ctermfg=white cterm=bold
-
-"hi StatusLineNC ctermbg=black ctermfg=white cterm=NONE
-"hi StatusLine ctermbg=black ctermfg=white cterm=bold
-
-set backspace=indent,start,eol
+set backspace=indent,start
 
 set history=512
 set autoread
-
-let g:loaded_matchparen = 1
-set noshowmatch
 
 "let g:netrw_list_hide= '.*\.swp$,.*\.meta'
 
 set spelllang=en
 set spellcapcheck=
 
-:autocmd BufReadPre,BufNewFile * let b:did_ftplugin = 1
-filetype plugin on
-
 hi clear SpellBad
-hi SpellBad ctermbg=darkgrey
+hi SpellBad ctermbg=darkgray
 hi clear SpellRare
 highlight EndOfBuffer ctermfg=darkgrey
 
@@ -70,3 +55,8 @@ nnoremap <Left> <nop>
 nnoremap <Right> <nop>
 nnoremap <Up> <nop>
 nnoremap <Down> <nop>
+
+let g:netrw_banner=0
+
+set exrc
+set secure
