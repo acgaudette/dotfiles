@@ -1,22 +1,4 @@
-# INIT
-
-exec_always --no-startup-id $UTILS/wall
-exec --no-startup-id conky
-
-# Rust focus highlight manager
-exec_always --no-startup-id \
-  $BIN/out/i3-highlight-focused 4 120
-
-exec --no-startup-id $UTILS/wbat
-exec --no-startup-id $UTILS/wnot
-
-# Start with spacer
-exec --no-startup-id i3-msg workspace 1
-exec --no-startup-id i3-msg open
-
 # OPTIONS
-
-set $alt Mod1
 
 workspace_layout default
 workspace_auto_back_and_forth no
@@ -27,11 +9,10 @@ force_focus_wrapping no
 
 # COMMANDS
 
-bindsym $alt+space exec $UTILS/menu
+set $alt Mod1
+bindsym $alt+space exec $BIN/extras/sys/menu
 bindsym $alt+Shift+Tab open
 bindsym $alt+Return exec term
-bindsym $alt+grave exec $UTILS/quaketerm
-
 bindsym $alt+Escape exit
 bindsym $alt+Shift+r restart
 
@@ -39,7 +20,6 @@ bindsym $alt+Shift+r restart
 
 bindsym $alt+w kill
 bindsym $alt+Shift+m fullscreen toggle
-bindsym $alt+f floating toggle
 
 bindsym $alt+m move container to workspace 9
 bindsym $alt+Shift+semicolon workspace 9
@@ -57,10 +37,10 @@ bindsym $alt+Shift+j move down
 bindsym $alt+Shift+k move up
 bindsym $alt+Shift+l move right
 
-bindsym $alt+Shift+1 move container to workspace 1
-bindsym $alt+Shift+2 move container to workspace 2
-bindsym $alt+Shift+3 move container to workspace 3
-bindsym $alt+Shift+4 move container to workspace 4
+bindsym $alt+Shift+a move container to workspace 1
+bindsym $alt+Shift+s move container to workspace 2
+bindsym $alt+Shift+d move container to workspace 3
+bindsym $alt+Shift+f move container to workspace 4
 
 # MOVEMENT
 
@@ -74,10 +54,10 @@ bindsym $alt+j focus down
 bindsym $alt+k focus up
 bindsym $alt+l focus right
 
-bindsym $alt+1 workspace 1
-bindsym $alt+2 workspace 2
-bindsym $alt+3 workspace 3
-bindsym $alt+4 workspace 4
+bindsym $alt+a workspace 1
+bindsym $alt+s workspace 2
+bindsym $alt+d workspace 3
+bindsym $alt+f workspace 4
 
 # THEME
 
@@ -93,12 +73,6 @@ client.unfocused        #333333 #222222 #888888 #292d2e #222222
 client.urgent           #2f343a #940000 #ffffff #900000 #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000 #0c0c0c
 client.background       #ffffff
-
-for_window [title="MATH"] floating enable
-for_window [title="DICTIONARY"] floating enable
-
-for_window [instance="quaketerm"] \
-  floating enable border none move absolute position 0 0
 
 for_window [tiling] border pixel 0 \
   title_format "<span>%title</span>"
