@@ -1,0 +1,12 @@
+#!/bin/sh
+
+HDR='\[ tracked'
+
+clear
+
+# --color=always
+# head -n 1 * | grep '\[ tracked' | grep -e none -e partial
+
+grep --exclude=*jpg --exclude=*png -rI "$HDR" * | grep -e none -e partial
+printf "\tuntagged:\n"
+grep --exclude=*jpg --exclude=*png -rIL -e "$HDR" -e '\[ untracked \]' * | grep -v meta
