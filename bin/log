@@ -1,0 +1,18 @@
+#!/bin/sh
+
+LOGDIR="/tmp/log/"
+LOGFILE="$LOGDIR$(date --iso-8601=seconds)"
+INP=
+
+function lp {
+	while true; do
+		echo $INP >> $LOGFILE
+		date +'%a%t%R%t%t%C.%m.%d'
+		echo
+		read INP
+	done
+}
+
+tput reset
+mkdir -p $LOGDIR
+lp | tee -a $LOGFILE
