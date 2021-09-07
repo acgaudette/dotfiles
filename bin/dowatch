@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 
 cmd=$1; shift
+echo cmd=$cmd
 
-while inotifywait -q -r \
+while true
+do inotifywait -q \
+-e create,delete,modify,move $@ \
 --timefmt "%H%M:%S" \
---format "%T Executing $cmd for %w" \
-"$@"; do
-    $cmd; echo
+--format "%T Executing $cmd for %w"
+    $cmd
 done
