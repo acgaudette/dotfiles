@@ -1,5 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
-MENU=~/.config/i3/menu
-
+MENU=~/.config/dmenu/menu
 eval $(cat $MENU | dmenu -i -m 0 -sb darkred)
