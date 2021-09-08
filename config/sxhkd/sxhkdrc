@@ -1,0 +1,24 @@
+alt + Return
+	~/bin/term
+alt + @space
+	~/bin/launch
+
+alt + ctrl + Tab
+	bspc quit
+
+alt + w
+	bspc node -c
+alt + shift + m
+	bspc node -t ~fullscreen
+alt + {_,shift +}{a,s,d,f}
+	bspc {desktop -f,node -d} '^{1,2,3,4}'
+
+alt + shift + ;
+	bspc desktop -f 5
+alt + m
+	bspc node -d 5
+
+alt + {h,j,k,l}
+	bspc node -f {west,south,north,east}
+alt + shift + {h,j,k,l}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
