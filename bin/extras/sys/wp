@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
-mode=$1; img=$2
-echo center fill max scale tile
-feh --bg-$mode ~/Downloads/wallpapers/$img
+test -z $1 \
+	&& echo center fill max scale tile \
+	&& exit 1
+mode=$1; shift
+
+cd ~/Downloads/wallpapers/
+feh --bg-$mode $@
