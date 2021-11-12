@@ -1,0 +1,13 @@
+#!/bin/sh
+
+SRC=~/bin/links
+
+Q=
+! test -z $@ && Q="-q $@"
+
+LINK=$(ls $SRC | fzf --reverse +m $Q)
+if ! test -z $LINK
+then
+	echo $LINK
+	cd $(cat $SRC/$LINK)
+fi

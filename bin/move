@@ -1,0 +1,11 @@
+#!/bin/sh
+
+Q=
+! test -z $@ && Q="-q $@"
+
+DST=$(find -type d | fzf +m $Q)
+if ! test -z $DST
+then
+	echo $DST
+	cd   $DST
+fi
