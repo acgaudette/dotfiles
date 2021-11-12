@@ -1,15 +1,16 @@
 #!/bin/sh
 
-LOGDIR="/tmp/log/"
-LOGFILE="$LOGDIR$(date +'%Y.%m.%d_%H-%M-%S')"
+tput reset
+
+test -z $LOGDIR && echo LOGDIR not set! && exit 1
+LOGFILE="$LOGDIR$(date +'%y.%b%d.%Hhrs.%M%S' | tr [:upper:] [:lower:])"
 INP=
 
-tput reset
 mkdir -p $LOGDIR
 while true
 do
 	date +'%a%t%R%t%t%C.%m.%d' | tee -a $LOGFILE
-	echo $INP >> $LOGFILE
 	echo
 	read INP
+	echo $INP >> $LOGFILE
 done
