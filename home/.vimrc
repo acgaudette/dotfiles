@@ -1,18 +1,24 @@
-set syntax=off
+set encoding=utf-8
 set viminfofile=NONE
+set syntax=off
 
+set shiftwidth=8
 set tabstop=8
 set softtabstop=8
-set shiftwidth=8
+set noexpandtab
+set wrap!
 
-set incsearch
 set autoindent
+set incsearch
+
+set cc=81
+hi ColorColumn ctermbg=232
+highlight col_lim cterm=bold
+" autocmd VimEnter,WinEnter * match col_lim /.\%>81v/
 
 set list
 set listchars=tab:.\ ,trail:~
-
 set ruler
-set wrap!
 
 set formatoptions-=r
 set formatoptions-=c
@@ -26,35 +32,27 @@ hi clear StatusLineNC
 hi clear StatusLine
 hi StatusLineNC ctermfg=lightgrey cterm=NONE
 hi StatusLine ctermfg=white cterm=NONE
-hi Visual ctermfg=white ctermbg=darkred
 
-set backspace=indent,start
+hi Visual ctermfg=white ctermbg=darkred
 
 set history=512
 set autoread
-
-"let g:netrw_list_hide= '.*\.swp$,.*\.meta'
-
-set spelllang=en
-set spellcapcheck=
-
-hi clear SpellBad
-hi SpellBad ctermbg=darkgray
-hi clear SpellRare
-highlight EndOfBuffer ctermfg=darkgrey
 
 command W w
 command Q q
 command Wq wq
 command Spl spl
 
-command SP setlocal spell
-command SPX set nospell
-
 nnoremap <Left> <nop>
 nnoremap <Right> <nop>
 nnoremap <Up> <nop>
 nnoremap <Down> <nop>
+
+set spellcapcheck=
+hi clear SpellRare
+hi SpellBad ctermbg=black cterm=bold
+command SP set spell
+command SPX set nospell
 
 let g:netrw_banner=0
 
