@@ -1,9 +1,13 @@
 #!/bin/sh
 
+#
+# best used with alias
+#
+
 Q=
 ! test -z $@ && Q="-q $@"
 
-DST=$(find -type d | fzf +m $Q)
+DST=$(find -type d -not -path '*/\.*' | fzf +m $Q)
 if ! test -z $DST
 then
 	echo $DST
