@@ -1,9 +1,10 @@
 alt + Return
-	~/bin/term
+	mlterm
 alt + @space
 	~/bin/launch
 
 alt + ctrl + Tab
+	pkill -USR1 -x sxhkd
 	bspc quit
 
 alt + w
@@ -13,12 +14,25 @@ alt + shift + m
 alt + {_,shift +}{a,s,d,f}
 	bspc {desktop -f,node -d} '^{1,2,3,4}'
 
-alt + shift + ;
-	bspc desktop -f 5
+alt + shift + semicolon
+	bspc desktop -f ^5
 alt + m
-	bspc node -d 5
+	bspc node -d ^5
 
 alt + {h,j,k,l}
 	bspc node -f {west,south,north,east}
+
+alt + ctrl + {h,j,k,l}
+	bspc node -z { \
+		left  32   0 || bspc node -z right -32   0, \
+		top    0  32 || bspc node -z bottom  0 -32, \
+		top    0 -32 || bspc node -z bottom  0  32, \
+		left -32   0 || bspc node -z right  32   0  }
+	# bspc node -v {-20 0,0 20,0 -20,20 0}
+
 alt + shift + {h,j,k,l}
-	bspc node -v {-20 0,0 20,0 -20,20 0}
+	bspc node -p {west,south,north,east}
+	# bspc node -s biggest.local
+alt + shift + @space
+	bspc node -n last.\!automatic
+	# bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel

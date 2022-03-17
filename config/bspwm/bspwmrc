@@ -2,8 +2,8 @@
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-bspc monitor DP-0 -d I II III
-bspc monitor DVI-D-0 -d IV
+  bspc monitor DP-0 -d I II III IV V
+# bspc monitor DVI-D-0 -d IV
 
 bspc config border_width 0
 bspc config window_gap 0
