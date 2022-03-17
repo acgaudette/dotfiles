@@ -1,0 +1,17 @@
+#!/bin/sh
+
+#
+# best used with alias
+#
+
+! test -z $1 && cd $1
+
+PRV='wc -l $(ls -Ap | grep -v "/$") | head -n -1'
+DST=$(/usr/bin/ls -d */ .. | fzf +m $Q --preview="$PRV")
+if ! test -z $DST
+then
+	echo $DST
+	cd   $DST
+	source move1
+fi
+clear && pwd && ls
