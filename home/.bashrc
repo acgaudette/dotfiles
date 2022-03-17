@@ -7,13 +7,20 @@ complete -d cd
 
 [ -f ~/.osconfig ] && source ~/.osconfig
 
-alias l='clear; ls'
+alias rg='rg --color always --heading --context-separator ""'
+alias ls='ls -AFv --group-directories-first'
 alias mv='mv -i'
 alias cp='cp -i'
-alias rg='rg --color always --heading --context-separator ""'
+
+alias l='clear; ls'
+alias ,='source goto'
+alias M='source tp'
+alias m='source move'
+
 alias gerp='while true; do grep -r / *; done'
 
 bind -r '\e[A'
 bind -r '\e[B'
+set -o vi
 
 source ngit
