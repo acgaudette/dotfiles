@@ -1,5 +1,9 @@
 #!/bin/sh
 
+#
+# best used with alias
+#
+
 SRC=~/bin/links
 
 Q=
