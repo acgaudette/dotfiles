@@ -2,8 +2,8 @@
 
 test -z $1 && exit 1
 
-OUT=$(fzf -m)
+OUT="$(fzf -m)"
 echo $OUT
 test -z $OUT && exit 1
 
-$@ $OUT
+exec $@ "$OUT"

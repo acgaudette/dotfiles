@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
 
 cmd=$1; shift
+test -z "$cmd" && exit 1
 echo cmd=$cmd
 
 while true
 do inotifywait -q \
--e create,delete,modify,move $@ \
+-e create,delete,modify,move "$@" \
 --timefmt "%H%M:%S" \
 --format "%T Executing $cmd for %w"
-    $cmd
+    eval $cmd
 done
