@@ -12,6 +12,6 @@ if ! test -z $DST
 then
 	echo $DST
 	cd   $DST
-	source move1
+	source move
 fi
 clear && pwd && ls
