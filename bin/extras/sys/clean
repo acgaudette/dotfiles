@@ -1,7 +1,12 @@
 #!/usr/bin/env bash
 
 sudo pacman -Scc
+
 tra ~/.cache/chromium
 tra ~/.cache/winetricks
-
 etra
+
+sudo pacman -Rsn $(sudo pacman -Qqdt)
+
+echo inspect packages? ; read -n 1
+sudo pacman -Qqet | less
